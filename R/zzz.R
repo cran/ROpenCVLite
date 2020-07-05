@@ -44,10 +44,13 @@
   if (!ROpenCVLite::isOpenCVInstalled()) {
     installOpenCV()
   } else {
-    pkgVersion <- unlist(strsplit(as.character(utils::packageVersion("ROpenCVLite")), "\\."))[3]
+    pkgVersion <- paste0(strsplit(as.character(utils::packageVersion("ROpenCVLite")), "\\.")[[1]][1:2], collapse = "")
     cvVersion <- gsub("\\D+", "", ROpenCVLite::opencvVersion())
-    if (pkgVersion != cvVersion) {
-      installOpenCV()
+
+    if (!is.null(pkgVersion)) {
+      if (pkgVersion != cvVersion) {
+        installOpenCV()
+      }
     }
   }
 }
