@@ -1,7 +1,7 @@
 Package: ROpenCVLite
 Type: Package
 Title: Install 'OpenCV'
-Version: 4.30.2
+Version: 4.50.0
 Authors@R: c(
     person("Simon", "Garnier", email = "garnier@njit.edu", role = c("aut", "cre"),
       comment = c(ORCID = "0000-0002-3886-3974")),
@@ -16,7 +16,7 @@ License: GPL-3
 LazyData: TRUE
 Imports: utils, pkgbuild, parallel
 SystemRequirements: cmake, C++11
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 Biarch: true
 Encoding: UTF-8
 Suggests: knitr, rmarkdown
@@ -25,8 +25,8 @@ URL: https://swarm-lab.github.io/ROpenCVLite/,
         https://github.com/swarm-lab/ROpenCVLite
 BugReports: https://github.com/swarm-lab/ROpenCVLite/issues
 NeedsCompilation: no
-Packaged: 2020-07-05 15:49:54 UTC; simon
+Packaged: 2021-02-06 09:04:54 UTC; simon
 Author: Simon Garnier [aut, cre] (<https://orcid.org/0000-0002-3886-3974>),
   Muschelli John [ctb]
 Repository: CRAN
-Date/Publication: 2020-07-05 16:00:03 UTC
+Date/Publication: 2021-02-06 23:40:08 UTC

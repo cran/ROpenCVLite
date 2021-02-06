@@ -1,18 +1,17 @@
 # ROpenCVLite
 
-[![Travis-CI Build Status](https://travis-ci.org/swarm-lab/ROpenCVLite.svg?branch=master)](https://travis-ci.org/swarm-lab/ROpenCVLite)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/swarm-lab/ROpenCVLite?branch=master&svg=true)](https://ci.appveyor.com/project/swarm-lab/ROpenCVLite)
-
----
+[![R-CMD-check](https://github.com/swarm-lab/ROpenCVLite/workflows/R-CMD-check/badge.svg)](https://github.com/swarm-lab/ROpenCVLite/actions)
+![CRAN](https://www.r-pkg.org/badges/version/ROpenCVLite)
+![CRANLOGS](https://cranlogs.r-pkg.org/badges/ROpenCVLite)
 
 ## Description
 
 [`ROpenCVLite`](https://github.com/swarm-lab/ROpenCVLite) is a utility package 
-that installs [`OpenCV`](http://opencv.org/) within [`R`](https://cran.r-project.org) 
-for use by other packages. This package is not a wrapper around [`OpenCV`](http://opencv.org/) 
-(it does not provide access to [`OpenCV`](http://opencv.org/) functions in R), 
+that installs [`OpenCV`](https://opencv.org/) within [`R`](https://cran.r-project.org) 
+for use by other packages. This package is not a wrapper around [`OpenCV`](https://opencv.org/) 
+(it does not provide access to [`OpenCV`](https://opencv.org/) functions in R), 
 not is it a computer vision package for [`R`](https://cran.r-project.org). All 
-it does is compiling and installing [`OpenCV`](http://opencv.org/) within your 
+it does is compiling and installing [`OpenCV`](https://opencv.org/) within your 
 [`R`](https://cran.r-project.org) installation so that other packages can easily 
 find it and compile against it. 
 
