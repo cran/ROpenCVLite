@@ -1,8 +1,8 @@
 Package: ROpenCVLite
 Type: Package
 Title: Helper Package for Installing OpenCV with R
-Version: 4.60.1
-Date: 2022-07-16
+Version: 4.60.2
+Date: 2022-07-17
 Authors@R: c(
     person("Simon", "Garnier", email = "garnier@njit.edu", role = c("aut", "cre"),
       comment = c(ORCID = "0000-0002-3886-3974")),
@@ -25,8 +25,8 @@ URL: https://swarm-lab.github.io/ROpenCVLite/,
         https://github.com/swarm-lab/ROpenCVLite
 BugReports: https://github.com/swarm-lab/ROpenCVLite/issues
 NeedsCompilation: no
-Packaged: 2022-07-16 15:34:00 UTC; simon
+Packaged: 2022-07-17 11:23:00 UTC; simon
 Author: Simon Garnier [aut, cre] (<https://orcid.org/0000-0002-3886-3974>),
   Muschelli John [ctb]
 Repository: CRAN
-Date/Publication: 2022-07-17 00:00:02 UTC
+Date/Publication: 2022-07-17 20:40:05 UTC
