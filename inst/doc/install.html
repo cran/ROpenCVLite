@@ -30,23 +30,23 @@ document.addEventListener('DOMContentLoaded', function(e) {
 </script>
 
 <style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
 
 
 
 <style type="text/css">
-  code {
-    white-space: pre;
-  }
-  .sourceCode {
-    overflow: visible;
-  }
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
@@ -64,55 +64,54 @@ pre > code.sourceCode { white-space: pre-wrap; }
 pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
-  { counter-reset: source-line 0; }
+{ counter-reset: source-line 0; }
 pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
+{ position: relative; left: -4em; counter-increment: source-line; }
 pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
 div.sourceCode
-  {   }
+{ }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
 <script>
 // apply pandoc div.sourceCode style to pre.sourceCode instead
@@ -121,13 +120,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   for (var i = 0; i < sheets.length; i++) {
     if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
     try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
+    var j = 0;
+    while (j < rules.length) {
       var rule = rules[j];
       // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -338,9 +344,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <p>Installing <a href="https://github.com/swarm-lab/ROpenCVLite"><code>ROpenCVLite</code></a>
 should go smoothly on all major operating systems (Mac, Windows, and
-“Ubuntu-like” Linux). There are a few steps to follow before installing
-the package itself in order to prepare all the necessary external
-(i.e. non-R) dependencies for <a href="https://opencv.org/"><code>OpenCV</code></a>.</p>
+most major Linux distributions). There are a few steps to follow before
+installing the package itself in order to prepare all the necessary
+external (i.e. non-R) dependencies for <a href="https://opencv.org/"><code>OpenCV</code></a>.</p>
 <p>All installation steps are described below.</p>
 <hr />
 <ul>
@@ -364,31 +370,51 @@ Windows</a></li>
 the latest versions of <a href="https://cmake.org/"><code>CMake</code></a> and <a href="https://cran.r-project.org/bin/windows/Rtools/"><code>Rtools</code></a>.</p>
 <div id="cmake" class="section level4">
 <h4>1.1.1 - Cmake</h4>
-<p><strong>+ Option 1</strong></p>
-<p>Use the convenience function provided by the <code>installr</code>
-library:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;installr&quot;</span>))</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;installr&quot;</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>installr<span class="sc">::</span><span class="fu">install.CMake</span>()</span></code></pre></div>
-<p>During the installation process, make sure to tell the installer to
-add <code>CMake</code> to your “PATH”.</p>
-<p><strong>+ Option 2</strong></p>
-<p>Download the <code>CMake</code> installer for Windows at <a href="https://cmake.org/download/">https://cmake.org/download/</a>. Make
-sure to tell the installer to add <code>CMake</code> to your “PATH”.</p>
-</div>
-<div id="rtools" class="section level4">
-<h4>1.1.2 - Rtools</h4>
-<p><strong>+ Option 1</strong></p>
+<ul>
+<li><strong>Option 1</strong></li>
+</ul>
+<p>Use the <a href="https://learn.microsoft.com/en-us/windows/package-manager/winget/"><code>winget</code></a>
+utility to install <code>Cmake</code> from the terminal/PowerShell:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>winget install cmake</span></code></pre></div>
+<ul>
+<li><strong>Option 2</strong></li>
+</ul>
 <p>Use the convenience function provided by the <code>installr</code>
 library:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;installr&quot;</span>))</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;installr&quot;</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>installr<span class="sc">::</span><span class="fu">install.Rtools</span>()</span></code></pre></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>installr<span class="sc">::</span><span class="fu">install.CMake</span>()</span></code></pre></div>
+<p>During the installation process, make sure to tell the installer to
+add <code>CMake</code> to your “PATH”.</p>
+<ul>
+<li><strong>Option 3</strong></li>
+</ul>
+<p>Download the <code>CMake</code> installer for Windows at <a href="https://cmake.org/download/">https://cmake.org/download/</a>. Make
+sure to tell the installer to add <code>CMake</code> to your “PATH”.</p>
+</div>
+<div id="rtools" class="section level4">
+<h4>1.1.2 - Rtools</h4>
+<ul>
+<li><strong>Option 1</strong></li>
+</ul>
+<p>Use the <a href="https://learn.microsoft.com/en-us/windows/package-manager/winget/"><code>winget</code></a>
+utility to install <code>Cmake</code> from the terminal/PowerShell:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>winget install RProject<span class="op">.</span><span class="fu">Rtools</span></span></code></pre></div>
+<ul>
+<li><strong>Option 2</strong></li>
+</ul>
+<p>Use the convenience function provided by the <code>installr</code>
+library:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;installr&quot;</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;installr&quot;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>installr<span class="sc">::</span><span class="fu">install.Rtools</span>()</span></code></pre></div>
 <p>During the installation process, make sure to tell the installer to
 add <code>Rtools</code> to your “PATH”.</p>
-<p><strong>+ Option 2</strong></p>
+<ul>
+<li><strong>Option 3</strong></li>
+</ul>
 <p>Download the latest “recommended” version of <code>Rtools</code> at
 <a href="https://cran.r-project.org/bin/windows/Rtools/">https://cran.r-project.org/bin/windows/Rtools/</a>.
 Make sure to tell the installer to add <code>Rtools</code> to your
@@ -400,7 +426,21 @@ Make sure to tell the installer to add <code>Rtools</code> to your
 <h3>1.2 - Mac</h3>
 <p>Before installing <code>ROpenCVLite</code>, you will need to install
 the latest version of <a href="https://cmake.org/"><code>CMake</code></a>.</p>
-<p><strong>+ Option 1</strong></p>
+<ul>
+<li><strong>Option 1</strong></li>
+</ul>
+<p>If you have <a href="https://brew.sh/"><code>homebrew</code></a>
+installed, run the following command in your terminal:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install cmake</span></code></pre></div>
+<ul>
+<li><strong>Option 2</strong></li>
+</ul>
+<p>If you have <a href="https://www.macports.org/"><code>MacPorts</code></a> installed,
+run the following command in your terminal:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> port install cmake</span></code></pre></div>
+<ul>
+<li><strong>Option 3</strong></li>
+</ul>
 <p>Go to <a href="https://cmake.org/download/">https://cmake.org/download/</a>.
 Scroll down until you reach the “Latest Release” section. Download the
 installer for Mac OS X (.dmg file). Once the download is complete,
@@ -411,14 +451,6 @@ folder.</p>
 terminal and type:</p>
 <p><code>sudo &quot;/Applications/CMake.app/Contents/bin/cmake-gui&quot; --install</code></p>
 <p>It will ask for your administrator password.</p>
-<p><strong>+ Option 2</strong></p>
-<p>If you have <a href="https://brew.sh/"><code>homebrew</code></a>
-installed, run the following command in your terminal:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install cmake</span></code></pre></div>
-<p><strong>+ Option 3</strong></p>
-<p>If you have <a href="https://www.macports.org/"><code>MacPorts</code></a> installed,
-run the following command in your terminal:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> port install cmake</span></code></pre></div>
 <hr />
 </div>
 <div id="linux" class="section level3">
@@ -426,15 +458,19 @@ run the following command in your terminal:</p>
 <p>Before installing <code>ROpenCVLite</code>, you will need to install
 the latest version of <a href="https://cmake.org/"><code>CMake</code></a>. Hereafter are two
 options to do this on Linux.</p>
-<p><strong>+ Option 1</strong></p>
+<ul>
+<li><strong>Option 1</strong></li>
+</ul>
 <p>Use your distribution’s package management system. For instance on
 Ubuntu-like systems, you can install Cmake by typing the following
 command in your terminal:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install cmake</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install cmake</span></code></pre></div>
 <p>Other distributions will have different package managers. Refer to
 the documentation of your distribution for finding the proper way to
 install Cmake on your system.</p>
-<p><strong>+ Option 2</strong></p>
+<ul>
+<li><strong>Option 2</strong></li>
+</ul>
 <p>Download <code>CMake</code> for Linux at <a href="https://cmake.org/download/">https://cmake.org/download/</a>.
 However it is recommended that you install it using your distribution’s
 package management system.</p>
@@ -444,26 +480,26 @@ package management system.</p>
 <h3>1.4 - Mac, Linux and Windows</h3>
 <p>Before installing <code>ROpenCVLite</code>, you will need to install
 the <code>devtools</code> package in <code>R</code>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.package</span>(<span class="st">&quot;devtools&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.package</span>(<span class="st">&quot;devtools&quot;</span>)</span></code></pre></div>
 <hr />
 </div>
 </div>
 <div id="installing-ropencvlite" class="section level2">
 <h2>2 - Installing <code>ROpenCVLite</code></h2>
 <p>You can install <code>ROpenCVLite</code> from CRAN as follows:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ROpenCVLite&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ROpenCVLite&quot;</span>)</span></code></pre></div>
 <p>Or you can install the latest latest development version (not
 recommended) as follows:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;swarm-lab/ROpenCVLite&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;swarm-lab/ROpenCVLite&quot;</span>)</span></code></pre></div>
 <p>This will not install <code>OpenCV</code> yet. You will be asked
 whether you want to install it the first time you load the package.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ROpenCVLite)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ROpenCVLite)</span></code></pre></div>
 <p>This step can take some time. Go make yourself a cup of coffee or two
 while <code>ROpenCVLite</code> downloads, compiles and installs
 <code>OpenCV</code> on your system.</p>
 <p>In addition, you can also request the (re)installation of
 <code>OpenCV</code> at any time as follows:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>ROpenCVLite<span class="sc">::</span><span class="fu">installOpenCV</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>ROpenCVLite<span class="sc">::</span><span class="fu">installOpenCV</span>()</span></code></pre></div>
 <p><code>ROpenCVLite</code> will also automatically detect when a new
 version of OpenCV is available and will offer to update it for you.</p>
 </div>
