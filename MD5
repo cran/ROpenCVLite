@@ -1,8 +1,8 @@
-04da0ede7e1baa0def9fb003415370cb *DESCRIPTION
+d13461265bceb9caac34979e1bfc89d7 *DESCRIPTION
 86d3a6a7121e9977261282c85a20eb57 *NAMESPACE
-37350cf065d6619449fb683b3eab6246 *NEWS.md
+fe3b49d53c21ae3f32af7d12d949cc00 *NEWS.md
 b1e5751e98c4f88b8555d16e2fe2eea4 *R/ROpenCVLite.R
-3c90348cc5e088cff2352e90a760b0a1 *R/opencv.R
+53f7f6a55d81bbab001afea4a090cd06 *R/opencv.R
 d7fc6a75b934a190b01f2e1c942b972a *R/zzz.R
 a7f3d695429ddfcb24b52ac241422258 *README.md
 a4ffa246a868da343f5051f7c7a784a1 *build/vignette.rds
@@ -11,9 +11,9 @@ d06c6bf9e6a350c0a48b4fda5de00422 *configure
 82efb64644588676da3c3029228e9e61 *inst/CITATION
 70c58dea44a4b1cf89213b03e77a928d *inst/OpenCVModule.4.7.0.cmake
 8e9a0eb7e26eb1a9a0462e8cf9e89e5a *inst/OpenCVModule.4.8.0.cmake
-b820710c7fe2cec87bcef181a2f67d2f *inst/doc/install.R
-9bf7fb302d7940862599562e673a6f25 *inst/doc/install.Rmd
-c3e258f33a01fb2989b2ed4f7a546d2e *inst/doc/install.html
+93bcb2df1d73b0685b657ee6ba176f4f *inst/doc/install.R
+f7c94fe9c401c4bec45b0b9c2655657e *inst/doc/install.Rmd
+70f349883ac3d2b43063ac0f96c3cb90 *inst/doc/install.html
 b549a214a864421b5529f51ad5a092c5 *inst/doc/usage.Rmd
 4aa16197a5f146c83ff685f7079dbf63 *inst/doc/usage.html
 d41d8cd98f00b204e9800998ecf8427e *inst/path
@@ -26,5 +26,5 @@ b4e8013c5fc74726f853e50df043a1b2 *man/isCmakeInstalled.Rd
 e55e4923ad4d1127c974095f4888a5f7 *man/opencvConfig.Rd
 fae35b3c8678252aed06bbf07c5e9f83 *man/opencvVersion.Rd
 3fa322e1521c4c9e1298f49efeacd785 *man/removeOpenCV.Rd
-9bf7fb302d7940862599562e673a6f25 *vignettes/install.Rmd
+f7c94fe9c401c4bec45b0b9c2655657e *vignettes/install.Rmd
 b549a214a864421b5529f51ad5a092c5 *vignettes/usage.Rmd
