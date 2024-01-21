@@ -1,8 +1,8 @@
-b5a0b6f88d3e84c4c32b878a22849f8b *DESCRIPTION
+0d3ea5d0cf6f96b8a92dd41ddc0bd585 *DESCRIPTION
 86d3a6a7121e9977261282c85a20eb57 *NAMESPACE
-dced0a6207dfb8eeed4a52ced58b4950 *NEWS.md
+7e8d07d1c40ae64853c87f0bb3e77703 *NEWS.md
 b1e5751e98c4f88b8555d16e2fe2eea4 *R/ROpenCVLite.R
-6720e5662ad95aee61fdf1aecb866bf1 *R/install.R
+408ff0800e931a8f385a0ac7ffd8869e *R/install.R
 af5dda5dcb0ea4605a81fb4ff2374ee9 *R/utils.R
 d7fc6a75b934a190b01f2e1c942b972a *R/zzz.R
 a7f3d695429ddfcb24b52ac241422258 *README.md
@@ -10,8 +10,6 @@ a7f3d695429ddfcb24b52ac241422258 *README.md
 d06c6bf9e6a350c0a48b4fda5de00422 *configure
 8da3d1c5bc4f4a8cdb97e89bfa701b3a *configure.win
 82efb64644588676da3c3029228e9e61 *inst/CITATION
-70c58dea44a4b1cf89213b03e77a928d *inst/OpenCVModule.4.7.0.cmake
-8e9a0eb7e26eb1a9a0462e8cf9e89e5a *inst/OpenCVModule.4.8.0.cmake
 63f4468f99d06e659ac2484fcd407768 *inst/doc/install.R
 112090c9cf790bec295b1ebddc446f50 *inst/doc/install.Rmd
 8deb84743d1b9e7b2e487a818b2b46fd *inst/doc/install.html
