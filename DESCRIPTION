@@ -1,8 +1,8 @@
 Package: ROpenCVLite
 Type: Package
 Title: Helper Package for Installing OpenCV with R
-Version: 4.90.1
-Date: 2024-01-20
+Version: 4.90.2
+Date: 2024-08-01
 Authors@R: c(
     person("Simon", "Garnier", email = "garnier@njit.edu", role = c("aut", "cre"),
       comment = c(ORCID = "0000-0002-3886-3974")),
@@ -15,9 +15,9 @@ Description: Installs 'OpenCV' for use by other packages. 'OpenCV' <https://open
     some of its experimental externally contributed modules. It does not provide 
     R bindings directly. 
 License: GPL-3
-Imports: utils, pkgbuild, parallel
+Imports: utils, parallel
 SystemRequirements: cmake
-RoxygenNote: 7.3.0
+RoxygenNote: 7.3.2
 Biarch: false
 Encoding: UTF-8
 Depends: R (>= 4.0.0)
@@ -27,8 +27,8 @@ URL: https://swarm-lab.github.io/ROpenCVLite/,
         https://github.com/swarm-lab/ROpenCVLite
 BugReports: https://github.com/swarm-lab/ROpenCVLite/issues
 NeedsCompilation: no
-Packaged: 2024-01-20 21:05:53 UTC; simon
+Packaged: 2024-08-01 11:56:41 UTC; simon
 Author: Simon Garnier [aut, cre] (<https://orcid.org/0000-0002-3886-3974>),
   Muschelli John [ctb]
 Repository: CRAN
-Date/Publication: 2024-01-21 12:32:44 UTC
+Date/Publication: 2024-08-01 12:10:02 UTC
