@@ -1,27 +1,27 @@
 ## ----eval=FALSE---------------------------------------------------------------
-#  if (!require("installr"))
-#    install.packages("installr")
-#  
-#  installr::install.Rtools()
+# if (!require("installr"))
+#   install.packages("installr")
+# 
+# installr::install.Rtools()
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  if (!require("installr"))
-#    install.packages("installr")
-#  
-#  installr::install.CMake()
+# if (!require("installr"))
+#   install.packages("installr")
+# 
+# installr::install.CMake()
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  install.packages("devtools")
+# install.packages("devtools")
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  install.packages("ROpenCVLite")
+# install.packages("ROpenCVLite")
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  devtools::install_github("swarm-lab/ROpenCVLite")
+# devtools::install_github("swarm-lab/ROpenCVLite")
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  library(ROpenCVLite)
+# library(ROpenCVLite)
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  ROpenCVLite::installOpenCV()
+# ROpenCVLite::installOpenCV()
 
