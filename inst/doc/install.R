@@ -11,13 +11,14 @@
 # installr::install.CMake()
 
 ## ----eval=FALSE---------------------------------------------------------------
-# install.packages("devtools")
-
-## ----eval=FALSE---------------------------------------------------------------
 # install.packages("ROpenCVLite")
 
 ## ----eval=FALSE---------------------------------------------------------------
-# devtools::install_github("swarm-lab/ROpenCVLite")
+# # Using pak (recommended)
+# pak::pak("swarm-lab/ROpenCVLite")
+# 
+# # Or using remotes
+# remotes::install_github("swarm-lab/ROpenCVLite")
 
 ## ----eval=FALSE---------------------------------------------------------------
 # library(ROpenCVLite)

@@ -68,27 +68,44 @@ isOpenCVInstalled <- function() {
 #'
 #' @export
 isCmakeInstalled <- function() {
-  cmake <- system("cmake --version", ignore.stdout = TRUE) == 0
+  if (.Platform$OS.type == "windows") {
+    rtools <- tryCatch(.findRtools(), error = function(e) NULL)
+    cmake_path <- if (!is.null(rtools) && rtools$version >= "4.2") {
+      paste0(rtools$path, "/x86_64-w64-mingw32.static.posix/bin/cmake.exe")
+    } else {
+      system("where cmake.exe", intern = TRUE)[1]
+    }
+    cmake <- !is.na(cmake_path) && nchar(cmake_path) > 0 && file.exists(cmake_path)
+  } else {
+    cmake <- system("cmake --version", ignore.stdout = TRUE) == 0
+  }
 
   if (cmake) {
     cmake
   } else {
-    cat("------------------ CMAKE NOT FOUND --------------------\n")
-    cat("\n")
-    cat("CMake was not found on the PATH. Please install CMake:\n")
-    cat("\n")
-    cat(" - installr::install.cmake()  (Windows; inside the R console)\n")
-    cat(" - yum install cmake          (Fedora/CentOS; inside a terminal)\n")
-    cat(" - apt install cmake          (Debian/Ubuntu; inside a terminal)\n")
-    cat(" - brew install cmake         (MacOS; inside a terminal with Homebrew)\n")
-    cat(" - port install cmake         (MacOS; inside a terminal with MacPorts)\n")
-    cat("\n")
-    cat("Alternatively install CMake from: <https://cmake.org/>\n")
-    cat("\n")
-    cat("-------------------------------------------------------\n")
-    cat("\n")
+    message(
+      "------------------ CMAKE NOT FOUND --------------------\n",
+      "\n",
+      "CMake was not found on the PATH. Please install CMake:\n",
+      "\n",
+      " - installr::install.cmake()  (Windows; inside the R console)\n",
+      " - yum install cmake          (Fedora/CentOS; inside a terminal)\n",
+      " - apt install cmake          (Debian/Ubuntu; inside a terminal)\n",
+      " - brew install cmake         (MacOS; inside a terminal with Homebrew)\n",
+      " - port install cmake         (MacOS; inside a terminal with MacPorts)\n",
+      "\n",
+      "Alternatively install CMake from: <https://cmake.org/>\n",
+      "\n",
+      "-------------------------------------------------------\n"
+    )
     cmake
   }
+}
+
+
+.parse_opencv_version <- function(path) {
+  pc <- utils::read.table(path, sep = "\t")[1, 1]
+  paste0("Version ", gsub(")", "", gsub(".*VERSION ", "", pc)))
 }
 
 
@@ -110,15 +127,12 @@ isCmakeInstalled <- function() {
 opencvVersion <- function() {
   if (isOpenCVInstalled()) {
     if (.Platform$OS.type == "windows") {
-      pcPath <- "/OpenCVConfig-version.cmake"
-      pc <- utils::read.table(paste0(OpenCVPath(), pcPath), sep = "\t")[1, 1]
-      paste0("Version ", gsub(")", "", gsub(".*VERSION ", "", pc)))
+      .parse_opencv_version(paste0(OpenCVPath(), "/OpenCVConfig-version.cmake"))
     } else {
       odir <- dir(OpenCVPath())
       lib <- odir[grepl("lib", odir)]
       pcPath <- paste0("/", lib, "/cmake/opencv4/OpenCVConfig-version.cmake")
-      pc <- utils::read.table(paste0(OpenCVPath(), pcPath), sep = "\t")[1, 1]
-      paste0("Version ", gsub(")", "", gsub(".*VERSION ", "", pc)))
+      .parse_opencv_version(paste0(OpenCVPath(), pcPath))
     }
   } else {
     stop("OpenCV is not installed on this system. Please use installOpenCV() to install it.")
@@ -161,7 +175,7 @@ opencvConfig <- function(output = "libs", arch = NULL) {
   if (output == "libs") {
     if (.Platform$OS.type == "windows") {
       if (is.null(arch)) {
-        arch = R.version$arch
+        arch <- R.version$arch
       }
       if (grepl("i386", arch)) {
         execPrefix <- paste0(prefix, "/x86/mingw")
@@ -180,15 +194,37 @@ opencvConfig <- function(output = "libs", arch = NULL) {
       odir <- dir(execPrefix)
       lib <- odir[grepl("lib", odir)]
       libDir <- paste0(execPrefix, "/", lib)
-      libs <- gsub("libopencv", "opencv", list.files(libDir, "lib*"))
-      libs <- gsub("\\.so", "", libs)
-      libs <- gsub("\\.dylib", "", libs)
-      libs <- libs[!grepl("\\.", libs)]
-      libs <- paste0("-l", libs)
-      if (Sys.info()[1] == "Darwin") {
-        cat(paste0("-L", libDir, " ", paste0(libs, collapse = " ")))
-      } else {
-        cat(paste0("-Wl,-rpath=", libDir, " ", "-L", libDir, " ", paste0(libs, collapse = " ")))
+      pkgconfig_dirs <- libDir[dir.exists(paste0(libDir, "/pkgconfig"))]
+
+      pkg_config <- Sys.which("pkg-config")
+      used_pkgconfig <- FALSE
+
+      if (nchar(pkg_config) > 0 && length(pkgconfig_dirs) > 0) {
+        old_path <- Sys.getenv("PKG_CONFIG_PATH")
+        Sys.setenv(PKG_CONFIG_PATH = paste(
+          c(pkgconfig_dirs, old_path), collapse = ":"
+        ))
+        result <- system2(pkg_config, c("--libs", "opencv4"),
+                          stdout = TRUE, stderr = FALSE)
+        Sys.setenv(PKG_CONFIG_PATH = old_path)
+        status <- attr(result, "status")
+        if (is.null(status) || status == 0) {
+          cat(result)
+          used_pkgconfig <- TRUE
+        }
+      }
+
+      if (!used_pkgconfig) {
+        libs <- gsub("libopencv", "opencv", list.files(libDir, "lib*"))
+        libs <- gsub("\\.so", "", libs)
+        libs <- gsub("\\.dylib", "", libs)
+        libs <- libs[!grepl("\\.", libs)]
+        libs <- paste0("-l", libs)
+        if (Sys.info()[1] == "Darwin") {
+          cat(paste0("-L", libDir, " ", paste0(libs, collapse = " ")))
+        } else {
+          cat(paste0("-Wl,-rpath=", libDir, " ", "-L", libDir, " ", paste0(libs, collapse = " ")))
+        }
       }
     }
   } else if (output == "cflags") {
@@ -197,7 +233,7 @@ opencvConfig <- function(output = "libs", arch = NULL) {
       includedirNew <- paste0(prefix, "/include")
 
       if (is.null(arch)) {
-        arch = R.version$arch
+        arch <- R.version$arch
       }
       if (grepl("i386", arch)) {
         execdir <- paste0(prefix, "/x86/mingw/bin")
@@ -209,10 +245,37 @@ opencvConfig <- function(output = "libs", arch = NULL) {
                  utils::shortPathName(includedirNew), '" -I"',
                  utils::shortPathName(execdir), '"'))
     } else {
-      includedirOld <- paste0(prefix, "/include/opencv4")
-      includedirNew <- paste0(prefix, "/include")
+      pkg_config <- Sys.which("pkg-config")
+      pkgconfig_found <- FALSE
 
-      cat(paste0("-I", includedirOld, " -I", includedirNew))
+      if (nchar(pkg_config) > 0) {
+        execPrefix <- prefix
+        odir <- dir(execPrefix)
+        lib <- odir[grepl("lib", odir)]
+        libDir <- paste0(execPrefix, "/", lib)
+        pkgconfig_dirs <- libDir[dir.exists(paste0(libDir, "/pkgconfig"))]
+
+        if (length(pkgconfig_dirs) > 0) {
+          old_path <- Sys.getenv("PKG_CONFIG_PATH")
+          Sys.setenv(PKG_CONFIG_PATH = paste(
+            c(pkgconfig_dirs, old_path), collapse = ":"
+          ))
+          result <- system2(pkg_config, c("--cflags", "opencv4"),
+                            stdout = TRUE, stderr = FALSE)
+          Sys.setenv(PKG_CONFIG_PATH = old_path)
+          status <- attr(result, "status")
+          if (is.null(status) || status == 0) {
+            cat(result)
+            pkgconfig_found <- TRUE
+          }
+        }
+      }
+
+      if (!pkgconfig_found) {
+        includedirOld <- paste0(prefix, "/include/opencv4")
+        includedirNew <- paste0(prefix, "/include")
+        cat(paste0("-I", includedirOld, " -I", includedirNew))
+      }
     }
   } else {
     stop("output should be either 'libs' or 'cflags'")
@@ -229,17 +292,16 @@ opencvConfig <- function(output = "libs", arch = NULL) {
     stop("ROpenCVLite requires a R version > 4.0.")
   }
 
-  if (version$minor < 2) {
-    rtools <- "rtools40"
-  } else {
-    rtools <- paste0("rtools", sub("\\D*(\\d+).*", "\\1", paste0(version$major, version$minor)))
-  }
-
+  # Detect whichever Rtools 4.x is actually on PATH rather than guessing
+  # from the R version (Rtools versioning does not always mirror R versioning)
   path <- strsplit(Sys.getenv("PATH"), ";")[[1]]
-  ix <- grep(rtools, path)[1]
-  rtools_path <- utils::shortPathName(sub(paste0("(", rtools, ").*"), "\\1", path[ix]))
+  ix <- grep("rtools4", path, ignore.case = TRUE)[1]
+  if (is.na(ix))
+    stop("Rtools not found on PATH. Please install Rtools from https://cran.r-project.org/bin/windows/Rtools/")
+  rtools <- sub("(?i).*(rtools4[0-9]*).*", "\\1", path[ix], perl = TRUE)
+  rtools_path <- utils::shortPathName(sub(paste0("(?i)(", rtools, ").*"), "\\1", path[ix], perl = TRUE))
   rtools_version <- system(
-    paste0("powershell (Get-Item ", rtools_path, "/unins000.exe).VersionInfo.ProductVersion"),
+    paste0("powershell -NoProfile (Get-Item ", rtools_path, "/unins000.exe).VersionInfo.ProductVersion"),
     intern = TRUE
   )
   rtools_version <- gsub(" ", "", rtools_version)
